@@ -24,6 +24,8 @@ RUN pnpm install --frozen-lockfile
 
 COPY --from=builder /app/dist ./dist
 
-EXPOSE 3000
+ENV PORT=9090
+
+EXPOSE 9090
 
 CMD ["node", "dist/main"]
